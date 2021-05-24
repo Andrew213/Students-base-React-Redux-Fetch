@@ -1,0 +1,92 @@
+
+
+.table {
+    
+        background-color: transparent;
+        border-collapse: collapse;
+    
+
+    &__head,.table__head_cell {
+        padding: 10px;
+        border: 2px solid #C283F3;
+    }
+
+    &__head_cell {
+        font-size: 30px;
+    }
+
+    &__row {
+        
+    }
+
+    &__cell {
+        padding: 20px;
+        border: 2px solid #C283F3;
+        text-align: center;
+
+    }
+
+    &__row_empty{
+position: relative;
+display: inline-block;
+    }
+
+    &__cell_empty {
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 30px;
+        left: 400px;
+        white-space: nowrap;
+        text-align: center;
+        color: red;
+        font-size: 30px;
+        font-weight: 800;
+    }
+   
+ &__input_change{
+     background-color: rgb(218, 218, 218);
+ }
+    &__btn{
+        color: #333;
+        font-size: 20px;
+        transition: color 0.3s;
+    }
+
+    &__btn_edit {
+        padding-left: 16px;
+        // padding-right: 30px;
+        position: relative;
+        &::before {
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10.5V13H2.5L9.87333 5.62662L7.37333 3.12662L0 10.5ZM11.8067 3.69329C12.0667 3.43329 12.0667 3.01329 11.8067 2.75329L10.2467 1.19329C9.98667 0.933291 9.56667 0.933291 9.30667 1.19329L8.08667 2.41329L10.5867 4.91329L11.8067 3.69329Z' fill='%239873FF'/%3E%3C/svg%3E%0A");
+            position: absolute;
+            left: 0;
+            width: 13px;
+            height: 13px;
+            top: 20%;
+        }
+        &:hover {
+            color: #9873ff;
+        }
+    }
+
+    &__btn_remove {
+        padding-left: 16px;
+        margin-left: 15px;
+        position: relative;
+        &::before {
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0C2.682 0 0 2.682 0 6C0 9.318 2.682 12 6 12C9.318 12 12 9.318 12 6C12 2.682 9.318 0 6 0ZM6 10.8C3.354 10.8 1.2 8.646 1.2 6C1.2 3.354 3.354 1.2 6 1.2C8.646 1.2 10.8 3.354 10.8 6C10.8 8.646 8.646 10.8 6 10.8ZM8.154 3L6 5.154L3.846 3L3 3.846L5.154 6L3 8.154L3.846 9L6 6.846L8.154 9L9 8.154L6.846 6L9 3.846L8.154 3Z' fill='%23F06A4D'/%3E%3C/svg%3E%0A");
+            position: absolute;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            top: 25%;
+        }
+        &:hover {
+            color: #f06a4d;
+        }
+    }
+}
+

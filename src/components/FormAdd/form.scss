@@ -1,0 +1,82 @@
+.form {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    align-self: stretch;
+
+    &__title {
+        display: block;
+        text-align: center;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__text {
+        font-weight: 800;
+        font-size: 30px;
+    }
+
+    &__err{
+        font-size: 20px;
+        font-weight: 800;
+        margin-top: -30px;
+        margin-bottom: 30px;
+        color: red;
+    }
+
+    &__input {
+        border-bottom: 1px solid #c283f3;
+        width: 400px;
+        padding: 10px 20px;
+        margin-top: 15px;
+        &::placeholder {
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+        }
+        font-size: 20px;
+        &[type="date"]:invalid::-webkit-datetime-edit {
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+        }
+    }
+    // &__input_change{
+    //     background-color: red;
+    // font-size: 40px;
+    // }
+
+    &__input--name {
+    }
+
+    &__input--faculty {
+    }
+
+    &__btn {
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid #9d5cd0;
+        font-size: 25px;
+        border-radius: 20px;
+        &:hover {
+            transition: background-color, 0.3s;
+            background-color: #7943a4;
+            color: #fff;
+        }
+    }
+    &__error {
+        font-size: 25px;
+        font-weight: 800;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: red;
+    }
+}

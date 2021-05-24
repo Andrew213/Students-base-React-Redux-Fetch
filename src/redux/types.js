@@ -1,0 +1,7 @@
+
+export const FETCH_STUDENT = 'FETCH_STUDENT';
+export const FETCH_STUDENT_SUCCESS = 'FETCH_STUDENT_SUCCESS';
+export const DELETE_STUDENT = 'DELETE_STUDENT';
+export const EDIT_STUDENT = 'EDIT_STUDENT';
+export const SHOW_ERR = 'SHOW_ERR';
+export const HIDE_ERR = 'HIDE_ERR';

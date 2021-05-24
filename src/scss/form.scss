@@ -1,0 +1,52 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    &__textarea {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 20px;
+        width: 50%;
+        border: 2px solid #c283f3;
+        border-radius: 10px;
+        &::placeholder {
+            font-weight: 16;
+            font-size: 20px;
+        }
+        &:focus {
+            outline: none;
+            border-color: #7943a4;
+        }
+    }
+    &__name {
+        font-size: 20px;
+        font-weight: 500;
+        border-bottom: 2px solid #c283f3;
+        width: 400px;
+        display: block;
+        padding: 20px;
+        &::placeholder {
+            font-weight: 16;
+            font-size: 20px;
+        }
+        &:focus {
+            outline: none;
+            border-color: #7943a4;
+        }
+    }
+    &__btn {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 20px;
+        height: auto;
+        padding: 0 20px;
+        border: 2px solid #9d5cd0;
+        border-radius: 10px;
+        outline: none;
+        &:hover {
+            transition: all 0.3s;
+            background-color: #7943a4;
+            color: #fff;
+        }
+    }
+}
