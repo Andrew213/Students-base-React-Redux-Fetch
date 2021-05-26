@@ -1,4 +1,4 @@
-import { DELETE_STUDENT, EDIT_STUDENT, FETCH_STUDENT, FETCH_STUDENT_SUCCESS, HIDE_ERR, SHOW_ERR } from "./types";
+import { FETCH_STUDENT_SUCCESS, HIDE_ERR, SHOW_ERR } from "./types";
 
 
 const url = `http://178.128.196.163:3000/api/records`;
@@ -25,6 +25,29 @@ export function studentsFetchData() {
     }
 
 }
+
+
+
+export function clearTable() {
+
+    return async dispatch => {
+
+
+        await fetch(url)
+            .then(response => response.json())
+            .then(response =>
+                response.forEach(el => {
+                    fetch(`${url}/${el._id}`, {
+                        method: 'DELETE'
+                    })
+                })
+            )
+
+        await dispatch(studentsFetchData())
+    }
+
+}
+
 
 export function addStudentAC(student) {
     return async dispatch => {

@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid'
-import React, { useEffect, useState, } from 'react'
+import React, { useEffect, useMemo, useState, } from 'react'
 import TableActions from './TableActions.js/TableActions.jsx'
-import {saveStudentAC,studentsFetchData} from '../../../redux/actions'
+import {clearTable, saveStudentAC,studentsFetchData} from '../../../redux/actions'
 import s from '../table.scss'
 import { connect } from 'react-redux';
 import InputName from '../inputs/InputName.jsx'
@@ -10,15 +10,23 @@ import InputBerthday from '../inputs/InputBirtday.jsx'
 import InputAddmission from '../inputs/InputAddmission.jsx'
 
 
-function TableContent({studentsState,fetchData,saveStudentAC}) {
 
+let clearLS = localStorage.getItem('clear') ? JSON.parse(localStorage.getItem('clear')) : true;
+localStorage.setItem('clear', JSON.stringify(clearLS));
+ let data = JSON.parse(localStorage.getItem('clear'));
+
+function TableContent({studentsState,fetchData,saveStudentAC,clearTable}) {
 
 useEffect(() => {
-    fetchData()
-return()=>{
-    false
-}    
-},[])
+    if(data){
+        clearTable()
+        localStorage.setItem('clear', JSON.stringify(data = false))
+    } else {
+        fetchData() 
+    }
+    console.log(1)
+},[data])
+
 
 if(studentsState.length){
     return studentsState.map(({_id,data}) => {
@@ -136,7 +144,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 return {
     fetchData: url => {dispatch(studentsFetchData(url))},
-    saveStudentAC: (newValue,id) => (dispatch(saveStudentAC(newValue,id)))
+    saveStudentAC: (newValue,id) => (dispatch(saveStudentAC(newValue,id))),
+    clearTable: () => (dispatch(clearTable()))
 }
 }
 
